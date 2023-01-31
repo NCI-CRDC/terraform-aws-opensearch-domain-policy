@@ -14,7 +14,9 @@ A repository template for creating reusable terraform modules to support infrast
 
 # Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.0 |
 
 # Modules
 
@@ -22,17 +24,24 @@ No modules.
 
 # Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_opensearch_domain_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/opensearch_domain_policy) | resource |
+| [aws_iam_policy_document.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 # Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app"></a> [app](#input\_app) | the name of the application expressed as an acronym | `string` | n/a | yes |
-| <a name="input_env"></a> [env](#input\_env) | the target tier ('dev', 'qa', 'stage', or 'prod'.) | `string` | n/a | yes |
-| <a name="input_program"></a> [program](#input\_program) | the program associated with the application | `string` | n/a | yes |
+| <a name="input_domain_arn"></a> [domain\_arn](#input\_domain\_arn) | the opensearch domain arn for the instance to which this policy is attached | `string` | n/a | yes |
+| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | the opensearch domain name for the instance to which this policy is attached | `string` | n/a | yes |
+| <a name="input_policy_actions"></a> [policy\_actions](#input\_policy\_actions) | the iam actions to allow on the opensearch domain policy | `set(string)` | <pre>[<br>  "es:ESHttpPut",<br>  "es:ESHttpPost",<br>  "es:ESHttpPatch",<br>  "es:ESHttpHead",<br>  "es:ESHttpGet",<br>  "es:ESHttpDelete"<br>]</pre> | no |
 
 # Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_access_policies"></a> [access\_policies](#output\_access\_policies) | n/a |
+| <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | n/a |
+| <a name="output_id"></a> [id](#output\_id) | n/a |
 <!-- END_TF_DOCS -->
